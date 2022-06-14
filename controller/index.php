@@ -31,12 +31,12 @@ switch($action){
         if(isset($_GET['id'])){
             $id = $_GET['id'];
             foreach($db->getData("SELECT * FROM nhansu WHERE mans='$id'") as $row){
-                $name = isset($_GET['hoten'])?$row['hoten']:'';
-                $gioitinh = isset($_GET['gioitinh'])?$row['gioitinh']:'';
-                $sdt = isset($_GET['sdt'])?$row['sdt']:'';
-                $diachi = isset($_GET['diachi'])?$row['diachi']:'';
-                $email = isset($_GET['email'])?$row['email']:'';
-
+                $name = $row['hoten'];
+                $gioitinh = $row['gioitinh'];
+                $sdt = $row['sdt'];
+                $diachi = $row['diachi'];
+                $email = $row['email'];
+                require_once "view/edit.php";
             }
         }
         if(isset($_POST['submit'])){
@@ -49,7 +49,7 @@ switch($action){
             header("Location:index.php?controller=nhansu");
 
         }
-        require_once "view/edit.php";
+        
         break;
     }
     case "delete":{

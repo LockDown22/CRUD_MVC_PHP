@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container mt-3">
-        <a href="index.php?controller=nhansu&action=add" class="btn btn-primary">Add</a>
+       
 
         <table class="table">
             <thead>
@@ -45,6 +45,7 @@
                 
             </tbody>
         </table>
+        <a href="index.php?controller=nhansu&action=add" class="btn btn-primary">Add</a>
     </div>
 </body>
 </html>
