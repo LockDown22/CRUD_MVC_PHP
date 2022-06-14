@@ -60,9 +60,28 @@ switch($action){
        }
         break;
     }
+    case "search":{
+     
+        if(isset($_GET['condition'])){
+            $str = $_GET["condition"];
+            echo $str;
+            $data = $db->getData("SELECT * FROM nhansu WHERE CONCAT(mans,hoten,gioitinh,sdt,diachi,email) LIKE '%$str%'");
+            // header("Location:index.php?controller=nhansu");
+            require_once "view/index.php";
+        }
+        else {
+            echo "<script>window.open().document.write('error');</script>";
+        }
+       
+
+        break;
+    }
+
+
     default:{
         $data = $db -> getData("SELECT * FROM nhansu");
         require_once "view/index.php";
+
         break;
     }
 

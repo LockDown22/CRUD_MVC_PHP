@@ -11,7 +11,12 @@
 </head>
 <body>
     <div class="container mt-3">
-       
+        <div>       
+    <input type="text" id="site-search" name="search">
+    <a href="" id="test"><button>Find</button></a>
+    <!-- <input type="submit"  name="submit"> -->
+        <!-- <button type="submit" name="submit">Search</button> -->
+        </div>
 
         <table class="table">
             <thead>
@@ -46,6 +51,18 @@
             </tbody>
         </table>
         <a href="index.php?controller=nhansu&action=add" class="btn btn-primary">Add</a>
-    </div>
+        <!-- <a href="index.php?controller=nhansu&action=search" class="btn btn-primary">Search</a> -->
+        <br>    
+        
+        <script>
+            let temp = document.getElementById("site-search");
+            const search = "index.php?controller=nhansu&action=search&condition=";
+            let link = document.getElementById("Test");
+            temp.addEventListener("change",()=>{
+                link.href = search + temp.value;
+
+            })
+    </script>
 </body>
+
 </html>

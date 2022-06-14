@@ -16,9 +16,9 @@ class crud extends dbConfig{
         return  $result;
     }
     public function action($sql){
-        $this->conn->exec($sql);
+        return $this->conn->exec($sql);
     }
-    
+
 }
 
 
