@@ -57,7 +57,7 @@
         <script>
             let temp = document.getElementById("site-search");
             const search = "index.php?controller=nhansu&action=search&condition=";
-            let link = document.getElementById("Test");
+            let link = document.getElementById("test");
             temp.addEventListener("change",()=>{
                 link.href = search + temp.value;
 

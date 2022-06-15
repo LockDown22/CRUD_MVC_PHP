@@ -64,8 +64,9 @@ switch($action){
      
         if(isset($_GET['condition'])){
             $str = $_GET["condition"];
-            echo $str;
-            $data = $db->getData("SELECT * FROM nhansu WHERE CONCAT(mans,hoten,gioitinh,sdt,diachi,email) LIKE '%$str%'");
+            
+            $data = $db->getData("SELECT * FROM nhansu WHERE CONCAT(mans,hoten,gioitinh,sdt,diachi,email) LIKE '%".$str."%'");
+            
             // header("Location:index.php?controller=nhansu");
             require_once "view/index.php";
         }
